@@ -18,6 +18,11 @@ pipeline {
 		   sh 'cp -r target/*.jar docker'
            }
         }
+	stage('Example') {
+            steps {
+                echo "Running ${env.BUILD_NUMBER}"
+            }
+        }
          
         stage('Build docker image') {
            steps {
